@@ -27,7 +27,7 @@ public class Tablero {
 	public void setDimensionesDeTableros(int numeroDeFilas, int numeroDeColumnas) {
 		this.numeroDeColumnas = numeroDeColumnas;
 		this.numeroDeFilas = numeroDeFilas;
-		numeroDeCasilleros += (numeroDeColumnas * numeroDeFilas);
+		this.numeroDeCasilleros = numeroDeColumnas * numeroDeFilas;
 	}
 
 	public int getNumeroDeFilas() {
@@ -59,18 +59,24 @@ public class Tablero {
 		return casilleros;
 	}
 
-	public void pintarTablero(HashMap<Integer, ObjetosEscondidos> casilleros) {
-		int elementosPintados = 1;
-		while (elementosPintados < numeroDeCasilleros) {
-			if (casilleros.get(elementosPintados).sePuedeAvanzar()) {
-				System.out.print(" ");
-				elementosPintados++;
+	public void pintarTablero() {
+		for (int casillero = 0; casillero < this.numeroDeCasilleros; casillero++) {
+			boolean esFinDeColumna = casillero != 0 && casillero % this.numeroDeColumnas == 0;
+									
+			if (esFinDeColumna) {
+				System.out.print("|");
+				System.out.print("\n");
+			} 
+			System.out.print("|");
+			
+			if (casilleros.containsKey(casillero)) {
+					System.out.print(casilleros.get(casillero).toString());
 			} else {
-				System.err.print("X");
-				elementosPintados++;
-
+				System.out.print(" ");
 			}
+					
 		}
-
+		System.out.print("|");
 	}
+
 }

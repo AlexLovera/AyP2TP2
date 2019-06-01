@@ -1,9 +1,5 @@
 package app;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class VerificadorDePosicion {
 
 	private Pac pac;
@@ -16,7 +12,7 @@ public class VerificadorDePosicion {
 		pac = Pac.getPac();
 		int columnas = Tablero.getTableroSingleton().getNumeroDeColumnas();
 		int posicion = pac.obtenerPosicionDePac();
-		if (posicion % columnas == 0) {
+		if ((posicion + 1) % columnas == 0) {
 			return false;
 		}
 		return true;
@@ -26,7 +22,7 @@ public class VerificadorDePosicion {
 		pac = Pac.getPac();
 		int columnas = Tablero.getTableroSingleton().getNumeroDeColumnas();
 		int posicion = pac.obtenerPosicionDePac();
-		if (posicion % (columnas + 1) == 0) {
+		if (posicion % columnas  == 0) {
 			return false;
 		}
 		return true;
@@ -36,7 +32,7 @@ public class VerificadorDePosicion {
 		pac = Pac.getPac();
 		int posicion = pac.obtenerPosicionDePac();
 		int columnas = Tablero.getTableroSingleton().getNumeroDeColumnas();
-		if (posicion <= columnas) {
+		if (posicion - columnas < 0) {
 			return false;
 		}
 		return true;

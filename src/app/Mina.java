@@ -31,5 +31,15 @@ public class Mina implements ObjetosEscondidos {
 	public void ejecutarComportamiento(Pac pac) {
 		explotarBomba(pac);
 	}
+	
+	@Override
+	public String toString() {
+		return " ";
+	}
+	
+	@Override
+	public boolean sePuedeAvanzar() {
+		return true;
+	}
 
 }

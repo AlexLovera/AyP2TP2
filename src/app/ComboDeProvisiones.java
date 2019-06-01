@@ -20,5 +20,10 @@ public class ComboDeProvisiones implements Provisiones {
 			provisiones.aplicarProvision(pac);
 		}
 	}
+	
+	@Override
+	public boolean sePuedeAvanzar() {
+		return true;
+	}
 
 }

@@ -21,4 +21,9 @@ public class PosicionLibre implements ObjetosEscondidos {
 	public void ejecutarComportamiento(Pac pac) {
 
 	}
+	
+	@Override
+	public String toString() {
+		return " ";
+	}
 }

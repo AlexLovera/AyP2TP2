@@ -4,7 +4,8 @@ public interface ObjetosEscondidos {
 
 	public void ejecutarComportamiento(Pac pac);
 
-	public default boolean sePuedeAvanzar() {
-		return true;
-	}
+	public boolean sePuedeAvanzar();
+	
+	public String toString();
+	
 }

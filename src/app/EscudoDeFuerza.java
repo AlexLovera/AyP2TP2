@@ -13,5 +13,10 @@ public class EscudoDeFuerza implements Provisiones {
 	public void aplicarProvision(Pac pac) {
 		sumarPuntosDeEscudo(pac);
 	}
+	
+	@Override
+	public boolean sePuedeAvanzar() {
+		return true;
+	}
 
 }

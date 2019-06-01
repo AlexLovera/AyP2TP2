@@ -7,5 +7,5 @@ public interface Provisiones extends ObjetosEscondidos {
 	public default void ejecutarComportamiento(Pac pac) {
 		aplicarProvision(pac);
 	}
-
+	
 }

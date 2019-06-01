@@ -12,4 +12,10 @@ public class CajaDeVitaminas implements Provisiones {
 	public void aplicarProvision(Pac pac) {
 		sumarVidaAPac(pac);
 	}
+	
+	@Override
+	public boolean sePuedeAvanzar() {
+		return true;
+	}
+
 }

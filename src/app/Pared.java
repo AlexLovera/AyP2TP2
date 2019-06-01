@@ -19,6 +19,11 @@ public class Pared implements ObjetosEscondidos {
 	@Override
 	public void ejecutarComportamiento(Pac pac) {
 		// TODO Auto-generated method stub
-
 	}
+	
+	@Override
+	public String toString() {
+		return "X";
+	}
+	
 }
