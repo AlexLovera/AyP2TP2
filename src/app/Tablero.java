@@ -68,15 +68,21 @@ public class Tablero {
 				System.out.print("\n");
 			} 
 			System.out.print("|");
-			
+//			if(casillero==posicionSalida) System.err.println("S"); else 
 			if (casilleros.containsKey(casillero)) {
 					System.out.print(casilleros.get(casillero).toString());
 			} else {
 				System.out.print(" ");
-			}
-					
+			}	
 		}
 		System.out.print("|");
+	}
+	
+	protected void setSalida(int salida) {
+		this.posicionSalida=salida;
+	}
+	protected void setEntrada(int entrada) {
+		this.posicionEntrada=entrada;
 	}
 
 }
