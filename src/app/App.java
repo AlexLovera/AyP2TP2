@@ -12,16 +12,27 @@ public class App {
 		//GestorDeArchivos configuracion = new GestorDeArchivos();
 		Tablero tablero = Tablero.getTableroSingleton();
 		
-		
 		// para probar
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pared pared = new Pared();
-		tablero.agregarObjetoAlCasillero(0, pared);
-		tablero.agregarObjetoAlCasillero(12, pared);
-		tablero.agregarObjetoAlCasillero(3, pared);
-		tablero.agregarObjetoAlCasillero(63, pared);
-		tablero.agregarObjetoAlCasillero(10, new Mina());
-		tablero.pintarTablero();
+		Pac pac = Pac.getPac();
+		try {
+			pac.setPosicionDeEntrada(1);
+			tablero.setSalida(52);
+			tablero.agregarObjetoAlCasillero(0, pared);
+			tablero.agregarObjetoAlCasillero(12, pared);
+			tablero.agregarObjetoAlCasillero(3, pared);
+			tablero.agregarObjetoAlCasillero(63, pared);
+			tablero.agregarObjetoAlCasillero(10, new Mina());
+			tablero.pintarTablero();
+		} catch (ItemsSobreSalidaNoPermitida e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ItemsSobreEntradaNoPermitida e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }

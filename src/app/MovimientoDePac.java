@@ -4,44 +4,52 @@ public class MovimientoDePac {
 	VerificadorDePosicion verificador = new VerificadorDePosicion();
 	
 	public boolean moverAPacHaciaLaDerecha() {
-		int posicionActual = Pac.getPac().obtenerPosicionDePac() + 1;
-		if (Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual).sePuedeAvanzar()) {
-			Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual)
-					.ejecutarComportamiento(Pac.getPac());
-			Pac.getPac().moverAPac(posicionActual);
+		int posicionDestino = Pac.getPac().obtenerPosicionDePac() + 1;
+		Tablero tablero = Tablero.getTableroSingleton();
+		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
+			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+			Pac.getPac().moverAPac(posicionDestino);
+			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
+			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
 			return false;
 	}
 	
 	public boolean moverAPacHaciaLaIzquierda() {
-		int posicionActual = Pac.getPac().obtenerPosicionDePac() - 1;
-		if (Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual).sePuedeAvanzar()) {
-			Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual)
-					.ejecutarComportamiento(Pac.getPac());
-			Pac.getPac().moverAPac(posicionActual);
+		int posicionDestino = Pac.getPac().obtenerPosicionDePac() - 1;
+		Tablero tablero = Tablero.getTableroSingleton();
+		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
+			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+			Pac.getPac().moverAPac(posicionDestino);
+			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
+			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
 			return false;
 	}
 	
 	public boolean moverAPacHaciaAbajo() {
-		int posicionActual = Pac.getPac().obtenerPosicionDePac() + Tablero.getTableroSingleton().getNumeroDeColumnas();
-		if (Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual).sePuedeAvanzar()) {
-			Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual)
-					.ejecutarComportamiento(Pac.getPac());
-			Pac.getPac().moverAPac(posicionActual);
+		int posicionDestino = Pac.getPac().obtenerPosicionDePac() + Tablero.getTableroSingleton().getNumeroDeColumnas();
+		Tablero tablero = Tablero.getTableroSingleton();
+		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
+			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+			Pac.getPac().moverAPac(posicionDestino);
+			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
+			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
 			return false;
 	}
 	
 	public boolean moverAPacHaciaArriba() {
-		int posicionActual = Pac.getPac().obtenerPosicionDePac() - Tablero.getTableroSingleton().getNumeroDeColumnas();
-		if (Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual).sePuedeAvanzar()) {
-			Tablero.getTableroSingleton().devolverObjetoEnCasillero(posicionActual)
-					.ejecutarComportamiento(Pac.getPac());
-			Pac.getPac().moverAPac(posicionActual);
+		int posicionDestino = Pac.getPac().obtenerPosicionDePac() - Tablero.getTableroSingleton().getNumeroDeColumnas();
+		Tablero tablero = Tablero.getTableroSingleton();
+		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
+			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+			Pac.getPac().moverAPac(posicionDestino);
+			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
+			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
 			return false;

@@ -8,7 +8,6 @@ public class Tablero {
 	private int numeroDeCasilleros;
 	private int numeroDeColumnas;
 	private int numeroDeFilas;
-	private int posicionEntrada;
 	private int posicionSalida;
 	public HashMap<Integer, ObjetosEscondidos> casilleros = new HashMap<Integer, ObjetosEscondidos>();
 
@@ -24,7 +23,7 @@ public class Tablero {
 	}
 
 	// para el gestor
-	public void setDimensionesDeTableros(int numeroDeFilas, int numeroDeColumnas) {
+	public void setDimensionesDeTablero(int numeroDeFilas, int numeroDeColumnas) {
 		this.numeroDeColumnas = numeroDeColumnas;
 		this.numeroDeFilas = numeroDeFilas;
 		this.numeroDeCasilleros = numeroDeColumnas * numeroDeFilas;
@@ -42,7 +41,15 @@ public class Tablero {
 		return numeroDeCasilleros;
 	}
 
-	public void agregarObjetoAlCasillero(int posicion, ObjetosEscondidos objeto) {
+	public void agregarObjetoAlCasillero(int posicion, ObjetosEscondidos objeto) throws ItemsSobreSalidaNoPermitida, ItemsSobreEntradaNoPermitida {
+		if (posicion == this.posicionSalida) {
+			throw new ItemsSobreSalidaNoPermitida("No se permite poner items sobre la salida");
+		}
+		
+		if (posicion == Pac.getPac().getPosicionDeEntrada()) {
+			throw new ItemsSobreEntradaNoPermitida("No se permite poner items sobre la entrada");
+		}
+		
 		// ver si funciona...
 		if (casilleros.get(posicion) != null) {
 			casilleros.replace(posicion, objeto);
@@ -52,7 +59,15 @@ public class Tablero {
 	}
 
 	public ObjetosEscondidos devolverObjetoEnCasillero(int posicion) {
-		return casilleros.get(posicion);
+		return this.casilleros.get(posicion);
+	}
+	
+	public void eliminarObjetoEnCasillero(int posicion) {
+		if (!this.casilleros.containsKey(posicion)) {
+			// Excepción
+		}
+		
+		this.casilleros.remove(posicion);
 	}
 
 	public HashMap<Integer, ObjetosEscondidos> devolverCasilleros() {
@@ -60,6 +75,7 @@ public class Tablero {
 	}
 
 	public void pintarTablero() {
+		Pac pac = Pac.getPac();
 		for (int casillero = 0; casillero < this.numeroDeCasilleros; casillero++) {
 			boolean esFinDeColumna = casillero != 0 && casillero % this.numeroDeColumnas == 0;
 									
@@ -68,9 +84,13 @@ public class Tablero {
 				System.out.print("\n");
 			} 
 			System.out.print("|");
-//			if(casillero==posicionSalida) System.err.println("S"); else 
+			// if(casillero==posicionSalida) System.err.println("S"); else 
 			if (casilleros.containsKey(casillero)) {
-					System.out.print(casilleros.get(casillero).toString());
+				System.out.print(casilleros.get(casillero).toString());
+			} else if (casillero == posicionSalida) {
+				System.out.print("S");
+			} else if (casillero == pac.getPosicion()) {
+				System.out.print("P");
 			} else {
 				System.out.print(" ");
 			}	
@@ -78,11 +98,21 @@ public class Tablero {
 		System.out.print("|");
 	}
 	
-	protected void setSalida(int salida) {
+	public void setSalida(int salida) throws ItemsSobreSalidaNoPermitida {
+		if (this.casilleros.containsKey(salida)) {
+			throw new ItemsSobreSalidaNoPermitida("No se permite poner la salida donde hay items");
+		}
+		
 		this.posicionSalida=salida;
 	}
-	protected void setEntrada(int entrada) {
+	
+	/*
+	public void setEntrada(int entrada) throws ItemsSobreEntradaNoPermitida {
+		if (this.casilleros.containsKey(entrada)) {
+			throw new ItemsSobreEntradaNoPermitida("No se permite poner la entrada donde hay items");
+		}
+		
 		this.posicionEntrada=entrada;
-	}
+	}*/
 
 }

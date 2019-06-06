@@ -1,11 +1,11 @@
 package app;
 
 public class CajaDeVitaminas implements Provisiones {
-	private static final int VIDA_PROVEIDA = 1;
+	private static final int VIDA_PROVISTA = 1;
 
 	private void sumarVidaAPac(Pac pac) {
 		int vidasActuales = pac.getVidas();
-		pac.setVidas(vidasActuales + VIDA_PROVEIDA);
+		pac.setVidas(vidasActuales + VIDA_PROVISTA);
 	}
 
 	@Override

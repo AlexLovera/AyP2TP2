@@ -12,7 +12,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnFronteraDerechaNoPuedoMovermeALaDerecha() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(7);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -23,7 +23,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnFronteraIzquierdaNoPuedoMovermeALaIzquierda() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(16);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -34,7 +34,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnFronteraSuperiorNoPuedoIrHaciaArriba() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(7);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -45,7 +45,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnFronteraInferiorNoPuedoIrHaciaAbajo() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(4, 8);
+		tablero.setDimensionesDeTablero(4, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(24);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -56,7 +56,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnPosicionIntermediaPuedoMovermeALaDerecha() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(3);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -67,7 +67,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnPosicionIntermediaPuedoMovermeALaIzquierda() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(3);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -78,7 +78,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnPosicionIntermediaPuedoMovermeHaciaArriba() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(11);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();
@@ -89,7 +89,7 @@ public class VerificadorDePosicionTests {
 	@Test
 	public void siEstoyEnPosicionIntermediaPuedoMovermeHaciaAbajo() {
 		Tablero tablero = Tablero.getTableroSingleton();
-		tablero.setDimensionesDeTableros(8, 8);
+		tablero.setDimensionesDeTablero(8, 8);
 		Pac pac = Pac.getPac();
 		pac.moverAPac(28);
 		VerificadorDePosicion verificador = new VerificadorDePosicion();

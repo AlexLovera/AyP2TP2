@@ -21,4 +21,12 @@ public class MinaYProvision implements ObjetosEscondidos{
 		return true;
 	}
 	
+	public Mina getMina() {
+		return this.mina;
+	}
+	
+	public Provisiones getProvisiones() {
+		return this.provisiones;	
+	}
+	
 }
