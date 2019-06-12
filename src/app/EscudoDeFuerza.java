@@ -18,5 +18,10 @@ public class EscudoDeFuerza implements Provisiones {
 	public boolean sePuedeAvanzar() {
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return " ";
+	}
 
 }

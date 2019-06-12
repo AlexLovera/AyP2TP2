@@ -10,7 +10,8 @@ public class Pac {
 	private int puntosDeEscudo;
 	
 	private Pac() {
-		
+		//supongo que empieza con 3 vidas
+		vidas=20;
 	}
 	
 	public static Pac getPac() {
@@ -29,20 +30,26 @@ public class Pac {
 		}
 		
 		this.posicionDeEntrada = posicion;
-		// Lo lógico es que si necesitamos llamar a este método es porque estamos reubicando a Pac
+		// Lo lï¿½gico es que si necesitamos llamar a este mï¿½todo es porque estamos reubicando a Pac
 		this.posicion = posicion;
 	}
 	
-	public void moverAPac(int posicion) {
-
-		this.posicion=posicion;
+	public boolean moverAPac(int posicion) {
+		if(posicion==Tablero.getTableroSingleton().getSalida()) {
+			System.out.println("Felicidades, ganaste!!");
+			this.posicion=posicion;
+			return false;
+		} else {
+			this.posicion=posicion;		
+			return true;
+		}
 	}
 	
 	public int obtenerPosicionDePac() {
 		return posicion;
 	}
 	
-	public void añadirEscudoDeFuerza(EscudoDeFuerza escudo) {
+	public void anadirEscudoDeFuerza(EscudoDeFuerza escudo) {
 		
 	}
 	

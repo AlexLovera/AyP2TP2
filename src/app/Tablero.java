@@ -28,6 +28,16 @@ public class Tablero {
 		this.numeroDeFilas = numeroDeFilas;
 		this.numeroDeCasilleros = numeroDeColumnas * numeroDeFilas;
 	}
+	
+	public void setNumeroDeFilas(int numeroDeFilas) {
+		this.numeroDeFilas = numeroDeFilas;
+		this.numeroDeCasilleros = numeroDeColumnas * numeroDeFilas;
+	}
+	
+	public void setNumeroDeColumnas(int numeroDeColumnas) {
+		this.numeroDeColumnas = numeroDeColumnas;
+		this.numeroDeCasilleros = numeroDeColumnas * numeroDeFilas;
+	}
 
 	public int getNumeroDeFilas() {
 		return numeroDeFilas;
@@ -42,14 +52,14 @@ public class Tablero {
 	}
 
 	public void agregarObjetoAlCasillero(int posicion, ObjetosEscondidos objeto) throws ItemsSobreSalidaNoPermitida, ItemsSobreEntradaNoPermitida {
-		if (posicion == this.posicionSalida) {
-			throw new ItemsSobreSalidaNoPermitida("No se permite poner items sobre la salida");
-		}
-		
-		if (posicion == Pac.getPac().getPosicionDeEntrada()) {
-			throw new ItemsSobreEntradaNoPermitida("No se permite poner items sobre la entrada");
-		}
-		
+//		if (posicion == this.posicionSalida) {
+//			throw new ItemsSobreSalidaNoPermitida("No se permite poner items sobre la salida");
+//		}
+//		
+//		if (posicion == Pac.getPac().getPosicionDeEntrada()) {
+//			throw new ItemsSobreEntradaNoPermitida("No se permite poner items sobre la entrada");
+//		}
+//		
 		// ver si funciona...
 		if (casilleros.get(posicion) != null) {
 			casilleros.replace(posicion, objeto);
@@ -64,7 +74,7 @@ public class Tablero {
 	
 	public void eliminarObjetoEnCasillero(int posicion) {
 		if (!this.casilleros.containsKey(posicion)) {
-			// Excepción
+			// Excepciï¿½n
 		}
 		
 		this.casilleros.remove(posicion);
@@ -76,6 +86,7 @@ public class Tablero {
 
 	public void pintarTablero() {
 		Pac pac = Pac.getPac();
+//		System.err.println(Pac.getPac().getPosicion());
 		for (int casillero = 0; casillero < this.numeroDeCasilleros; casillero++) {
 			boolean esFinDeColumna = casillero != 0 && casillero % this.numeroDeColumnas == 0;
 									
@@ -89,7 +100,7 @@ public class Tablero {
 				System.out.print(casilleros.get(casillero).toString());
 			} else if (casillero == posicionSalida) {
 				System.out.print("S");
-			} else if (casillero == pac.getPosicion()) {
+			} else if (casillero == Pac.getPac().getPosicion()) {
 				System.out.print("P");
 			} else {
 				System.out.print(" ");
@@ -104,6 +115,14 @@ public class Tablero {
 		}
 		
 		this.posicionSalida=salida;
+	}
+	public int getSalida() {
+		return posicionSalida;
+	}
+	
+	public void pintarMarcador() {
+		Pac pac= Pac.getPac();
+		System.out.println("\nEscudo: "+pac.getPuntosDeEscudo()+" Vidas: "+pac.getVidas());
 	}
 	
 	/*

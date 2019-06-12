@@ -4,6 +4,12 @@ public class Mina implements ObjetosEscondidos {
 
 	private static final int PUNTO_A_RESTAR = 1;
 
+	@Override
+	public void ejecutarComportamiento(Pac pac) {
+		System.out.println("Fijate por donde vas capo");
+		explotarBomba(pac);
+	}
+	
 	private void explotarBomba(Pac pac) {
 
 		if (pac.getPuntosDeEscudo() > 0) {
@@ -23,14 +29,11 @@ public class Mina implements ObjetosEscondidos {
 		if (vidasActuales > 1) {
 			pac.setVidas(vidasActuales - PUNTO_A_RESTAR);
 		} else if (vidasActuales == 1) {
+			pac.setVidas(vidasActuales - PUNTO_A_RESTAR);
 			// throw new ExceptionEspecial();
 		}
 	}
 
-	@Override
-	public void ejecutarComportamiento(Pac pac) {
-		explotarBomba(pac);
-	}
 	
 	@Override
 	public String toString() {

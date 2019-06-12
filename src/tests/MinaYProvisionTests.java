@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import app.CajaDeVitaminas;
 import app.Mina;
-import app.MinaYProvision;
+import app.ProvisionYMina;
 import app.Pac;
 
 
@@ -13,7 +13,7 @@ public class MinaYProvisionTests {
 	
 	@Test
 	public void primeroSeAgregaProvisionYLuegoExplotaMina() {
-		MinaYProvision minaYProvision = new MinaYProvision(new Mina(), new CajaDeVitaminas());
+		ProvisionYMina minaYProvision = new ProvisionYMina(new CajaDeVitaminas(), new Mina());
 		Pac pac = Pac.getPac();
 		pac.setVidas(1);
 		pac.setPuntosDeEscudo(0);

@@ -17,5 +17,10 @@ public class CajaDeVitaminas implements Provisiones {
 	public boolean sePuedeAvanzar() {
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return " ";
+	}
 
 }

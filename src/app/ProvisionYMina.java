@@ -1,10 +1,10 @@
 package app;
 
-public class MinaYProvision implements ObjetosEscondidos{
+public class ProvisionYMina implements ObjetosEscondidos{
 	private Mina mina;
 	private Provisiones provisiones;
 
-	public MinaYProvision(Mina mina,Provisiones provisiones) {
+	public ProvisionYMina(Provisiones provisiones,Mina mina) {
 		this.mina=mina;
 		this.provisiones=provisiones;
 	}
@@ -29,4 +29,8 @@ public class MinaYProvision implements ObjetosEscondidos{
 		return this.provisiones;	
 	}
 	
+	@Override
+	public String toString() {
+		return " ";
+	}
 }

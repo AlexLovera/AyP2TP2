@@ -1,58 +1,92 @@
 package app;
 
 public class MovimientoDePac {
-	VerificadorDePosicion verificador = new VerificadorDePosicion();
+	private static VerificadorDePosicion verificador = new VerificadorDePosicion();
 	
-	public boolean moverAPacHaciaLaDerecha() {
+	public static boolean moverAPac(String entrada) {
+		switch (entrada) {
+		case "Derecha":
+			return moverAPacHaciaLaDerecha();
+//			break;
+		case "Izquierda":
+			return moverAPacHaciaLaIzquierda();
+//			break;
+		case "Arriba":
+			return moverAPacHaciaArriba();
+//			break;
+		case "Abajo":
+			return moverAPacHaciaAbajo();
+//			break;
+		default: 
+			System.err.println("Debe ingresar un comando valido");
+			return true;
+		} 
+		
+	}
+
+	public static boolean moverAPacHaciaLaDerecha() {
 		int posicionDestino = Pac.getPac().obtenerPosicionDePac() + 1;
 		Tablero tablero = Tablero.getTableroSingleton();
-		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
-			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+		if (!(tablero.devolverObjetoEnCasillero(posicionDestino) instanceof Pared)) {
+			if(tablero.devolverObjetoEnCasillero(posicionDestino) != null) {
+				tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posiciï¿½n
+				tablero.eliminarObjetoEnCasillero(posicionDestino);				
+			}
 			Pac.getPac().moverAPac(posicionDestino);
-			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
-			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
-		} else
-			return false;
+		} else 
+			//Antes boolean, pero se corta el while asi...
+			return true;			
 	}
 	
-	public boolean moverAPacHaciaLaIzquierda() {
+	public static boolean moverAPacHaciaLaIzquierda() {
 		int posicionDestino = Pac.getPac().obtenerPosicionDePac() - 1;
 		Tablero tablero = Tablero.getTableroSingleton();
-		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
-			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+		if (!(tablero.devolverObjetoEnCasillero(posicionDestino) instanceof Pared)) {
+			if(tablero.devolverObjetoEnCasillero(posicionDestino) != null) {
+				tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posiciï¿½n
+				tablero.eliminarObjetoEnCasillero(posicionDestino);				
+			}
 			Pac.getPac().moverAPac(posicionDestino);
-			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
-			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
-			return false;
+			//Antes boolean, pero se corta el while asi...
+			return true;
 	}
 	
-	public boolean moverAPacHaciaAbajo() {
+	public static boolean moverAPacHaciaAbajo() {
 		int posicionDestino = Pac.getPac().obtenerPosicionDePac() + Tablero.getTableroSingleton().getNumeroDeColumnas();
 		Tablero tablero = Tablero.getTableroSingleton();
-		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
-			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+		if (!(tablero.devolverObjetoEnCasillero(posicionDestino) instanceof Pared)) {
+			if(tablero.devolverObjetoEnCasillero(posicionDestino) != null) {
+				tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posiciï¿½n
+				tablero.eliminarObjetoEnCasillero(posicionDestino);			
+			}
 			Pac.getPac().moverAPac(posicionDestino);
-			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
-			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
-			return false;
+			//Antes boolean, pero se corta el while asi...
+			return true;
 	}
 	
-	public boolean moverAPacHaciaArriba() {
+	public static boolean moverAPacHaciaArriba() {
 		int posicionDestino = Pac.getPac().obtenerPosicionDePac() - Tablero.getTableroSingleton().getNumeroDeColumnas();
 		Tablero tablero = Tablero.getTableroSingleton();
-		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
-			tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+//		if (tablero.devolverObjetoEnCasillero(posicionDestino).sePuedeAvanzar()) {
+		if(!(tablero.devolverObjetoEnCasillero(posicionDestino) instanceof Pared)) {
+			if(tablero.devolverObjetoEnCasillero(posicionDestino) != null) {
+				tablero.devolverObjetoEnCasillero(posicionDestino).ejecutarComportamiento(Pac.getPac());
+				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posiciï¿½n
+				tablero.eliminarObjetoEnCasillero(posicionDestino);		
+			}
 			Pac.getPac().moverAPac(posicionDestino);
-			// Una vez ejecutado el comportamiento se puede remover el objeto de esa posición
-			tablero.eliminarObjetoEnCasillero(posicionDestino);
 			return true;
 		} else
-			return false;
+			//Antes boolean, pero se corta el while asi...
+			return true;
 	}
 	
 }

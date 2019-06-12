@@ -50,8 +50,7 @@ public class TableroTests {
 		Pac.getPac().setPosicionDeEntrada(0);
 		tablero.setSalida(8);
 		tablero.agregarObjetoAlCasillero(1, new Mina());
-		MovimientoDePac gestorDeMovimiento = new MovimientoDePac();
-		gestorDeMovimiento.moverAPacHaciaLaDerecha();
+		MovimientoDePac.moverAPacHaciaLaDerecha();
 		Assert.assertNull(tablero.devolverObjetoEnCasillero(1));
 	}
 
