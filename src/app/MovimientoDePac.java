@@ -33,7 +33,9 @@ public class MovimientoDePac {
 				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posici�n
 				tablero.eliminarObjetoEnCasillero(posicionDestino);				
 			}
+			if(verificador.sePuedeAvanzarHaciaLaDerecha()) {
 			Pac.getPac().moverAPac(posicionDestino);
+			}
 			return true;
 		} else 
 			//Antes boolean, pero se corta el while asi...
@@ -49,7 +51,9 @@ public class MovimientoDePac {
 				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posici�n
 				tablero.eliminarObjetoEnCasillero(posicionDestino);				
 			}
+			if(verificador.sePuedeAvanzarHaciaLaIzquierda()) {
 			Pac.getPac().moverAPac(posicionDestino);
+			}
 			return true;
 		} else
 			//Antes boolean, pero se corta el while asi...
@@ -65,7 +69,9 @@ public class MovimientoDePac {
 				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posici�n
 				tablero.eliminarObjetoEnCasillero(posicionDestino);			
 			}
-			Pac.getPac().moverAPac(posicionDestino);
+			if(verificador.sePuedeAvanzarHaciaAbajo()) {
+				Pac.getPac().moverAPac(posicionDestino);				
+			}
 			return true;
 		} else
 			//Antes boolean, pero se corta el while asi...
@@ -82,7 +88,9 @@ public class MovimientoDePac {
 				// Una vez ejecutado el comportamiento se puede remover el objeto de esa posici�n
 				tablero.eliminarObjetoEnCasillero(posicionDestino);		
 			}
+			if(verificador.sePuedeAvanzarHaciaArriba()) {
 			Pac.getPac().moverAPac(posicionDestino);
+			}
 			return true;
 		} else
 			//Antes boolean, pero se corta el while asi...
