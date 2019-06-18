@@ -1,2 +1,9 @@
-# AyP2TP2
-Trabajo Practico 2
+# Algoritmos y Programación II : TP 2
+
+Integrantes: 
+- Di Dio Gonzalo
+- Lottero Bruno
+- Lovera Alexander
+- Posta Daniel
+
+## Decisiones de diseño
