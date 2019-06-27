@@ -84,7 +84,7 @@ Esta clase se utiliza en las posiciones que contienen mina y provisiones (primer
 Es la clase del tablero (utiliza singleton), guarda un HashMap con las posiciones=>objetos del tablero.
 Almacena el numero de columnas, filas, numero de casilleros y posicion de salida. También contiene el método para imprimir el tablero.
 
-#### VerificadorDePosicion.java
+##### VerificadorDePosicion.java
 
 Esta clase tiene métodos que utilizan aritmética modular para validar los movimientos del personaje:
 
