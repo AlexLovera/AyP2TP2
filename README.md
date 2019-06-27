@@ -93,3 +93,9 @@ Esta clase tiene métodos que utilizan aritmética modular para validar los movi
 - No se puede avanzar hacia arria si : posicion_actual - cantidad_de_columnas < 0
 - No se puede anvanzar hacia abajo si : posicion_actual >= inicioUltimaFila
 - Donde inicioUltimaFila = numero_de_casilleros - numero_de_columnas
+
+##### Conclusiones
+
+Nos resultó interesante utilizar un diccionario para representar el tablero en contraposición a utilizar un vector, ya que de esta manera no se desperdicia memoria en posiciones vacias.
+El patrón composite facilita de forma sencilla representar estructuras compuestas.
+El uso del patrón singleton lleva consigo la responsabilidad de tener especial cuidado sobre la manera en que se desarrollan los tests.
