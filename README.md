@@ -96,6 +96,6 @@ Esta clase tiene métodos que utilizan aritmética modular para validar los movi
 
 ##### Conclusiones
 
-Nos resultó interesante utilizar un diccionario para representar el tablero en contraposición a utilizar un vector, ya que de esta manera no se desperdicia memoria en posiciones vacias.
-El patrón composite facilita de forma sencilla representar estructuras compuestas.
-El uso del patrón singleton lleva consigo la responsabilidad de tener especial cuidado sobre la manera en que se desarrollan los tests.
+- Nos resultó interesante utilizar un diccionario para representar el tablero en contraposición a utilizar un vector, ya que de esta manera no se desperdicia memoria en posiciones vacias.
+- El patrón composite facilita de forma sencilla representar estructuras compuestas.
+- El uso del patrón singleton lleva consigo la responsabilidad de tener especial cuidado sobre la manera en que se desarrollan los tests.
