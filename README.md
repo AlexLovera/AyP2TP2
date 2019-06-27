@@ -16,6 +16,6 @@ Integrantes:
 
 ## UML
 
-![alt text](Diagrama de clases TP2 (1).png "Diagrama UML")
+![alt text](UML_TP2.png "Diagrama UML")
 
-[Link a la imágen](Diagrama de clases TP2 (1).png)
+[Link a la imágen](UML_TP2.png)
