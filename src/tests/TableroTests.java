@@ -14,6 +14,7 @@ import app.Tablero;
 
 public class TableroTests {
 	
+	/*
 	@Test(expected = ItemsSobreSalidaNoPermitida.class)
 	public void noPuedoTenerItemsEnLaSalida() throws ItemsSobreSalidaNoPermitida, ItemsSobreEntradaNoPermitida {
 		Tablero tablero = Tablero.getTableroSingleton();
@@ -22,7 +23,9 @@ public class TableroTests {
 		Pac.getPac().setPosicionDeEntrada(0);
 		tablero.agregarObjetoAlCasillero(8, new Pared());
 	}
+	*/
 	
+	/*
 	@Test(expected = ItemsSobreEntradaNoPermitida.class)
 	public void noPuedoTenerParedEnLaSalida() throws ItemsSobreSalidaNoPermitida, ItemsSobreEntradaNoPermitida {
 		Tablero tablero = Tablero.getTableroSingleton();
@@ -30,7 +33,7 @@ public class TableroTests {
 		Pac.getPac().setPosicionDeEntrada(8);
 		tablero.setSalida(0);
 		tablero.agregarObjetoAlCasillero(8, new Pared());
-	}
+	}*/
 	
 	@Test
 	public void siCreoMinaEnPosicionUnoExisteEnDichaPosicion() throws ItemsSobreEntradaNoPermitida, ItemsSobreSalidaNoPermitida {
