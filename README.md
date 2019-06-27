@@ -88,8 +88,8 @@ Almacena el numero de columnas, filas, numero de casilleros y posicion de salida
 
 Esta clase tiene métodos que utilizan aritmética modular para validar los movimientos del personaje:
 
-No se puede avanzar a la derecha si : (posicion_actual + 1) % cantidad_de_columnas == 0
-No se puede avanzar a la izquierda si : posicion_actual % cantidad_de_columnas  == 0
-No se puede avanzar hacia arria si : posicion_actual - cantidad_de_columnas < 0
-No se puede anvanzar hacia abajo si : posicion_actual >= inicioUltimaFila
-Donde inicioUltimaFila = numero_de_casilleros - numero_de_columnas
+- No se puede avanzar a la derecha si : (posicion_actual + 1) % cantidad_de_columnas == 0
+- No se puede avanzar a la izquierda si : posicion_actual % cantidad_de_columnas  == 0
+- No se puede avanzar hacia arria si : posicion_actual - cantidad_de_columnas < 0
+- No se puede anvanzar hacia abajo si : posicion_actual >= inicioUltimaFila
+- Donde inicioUltimaFila = numero_de_casilleros - numero_de_columnas
